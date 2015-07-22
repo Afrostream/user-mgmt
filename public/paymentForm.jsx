@@ -129,7 +129,7 @@ var PaymentForm = React.createClass({
 				<div>
 					<h3>Subscription Confirmed</h3>
 					<p>Thank you for subscribing!</p>
-					<p>Please <a href="http://localhost:3000">log in</a> to start enjoying.</p>
+					<p>Please <a href="http://afrostream-user-mgmt-staging.herokuapp.com/">log in</a> to start enjoying.</p>
 				</div>
 			);
 		} else if (this.state.subscriptionStatus === 'not subscribed') {
