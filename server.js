@@ -25,4 +25,4 @@ app.use(errorHandler({
 }));
 
 console.log('Simple static server showing %s listening at http://%s:%s', publicDir, hostname, port);
-app.listen(port, hostname);
+app.listen(port);
