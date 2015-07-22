@@ -1,4 +1,4 @@
-# Auth0 + React + API Seed
+# Auth0 + React + API Seed + heroku
 
 This is the seed project you need to use if you're going to create an app that will use Auth0, React and an API that you're going to be developing. That API can be in any language.
 
