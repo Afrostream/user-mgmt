@@ -84,7 +84,8 @@ var PaymentForm = React.createClass({
 
 				$.ajax({
 					type: 'POST',
-					url: 'http://localhost:3002/api/subscriptions',
+					//url: 'http://localhost:3002/api/subscriptions',
+					url: 'https://afrostream-api-v1-staging.herokuapp.com/api/subscriptions',
 					data: formData,
 					contentType: 'application/json',
 					success: function () {
