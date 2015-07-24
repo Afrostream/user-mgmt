@@ -5,6 +5,7 @@ var SelectPlan = React.createClass({
 
 		//this.props.lock.show();
 	},
+
 	getInitialState: function() {
 
 		return {

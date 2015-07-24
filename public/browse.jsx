@@ -6,12 +6,40 @@ var Browse = React.createClass({
 	//this.props.lock.show();
 	},
 
+	getInitialState: function() {
+		return {
+			loggedIn: true
+		}
+	},
+
+	logOut: function() {
+
+		console.log('*** this dude is logging out!!! ***');
+		localStorage.removeItem('userToken');
+
+		this.setState({
+			loggedIn: false
+		});
+	},
+
 	render: function() {
-		return (
-			<div>
-				<h3>Logged In and Paid</h3>
-				<p>You can now start to browse our video content!</p>
-			</div>
-		);
+
+		if (this.state.loggedIn === true) {
+
+			return (
+				<div>
+					<h3>Logged In and Paid</h3>
+					<p>You can now start to browse our video content!</p>
+					<button
+						id="subscribe"
+						form="subscription-create"
+						className="btn btn-primary"
+						onClick={this.logOut}>Log Out
+					</button>
+				</div>
+			);
+		} else {
+			return (<Home lock={this.props.lock} />);
+		}
 	}
 });

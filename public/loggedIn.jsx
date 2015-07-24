@@ -37,10 +37,10 @@ render: function() {
     if ( (typeof this.state.profile.paymentStatus != 'undefined')
       && (this.state.profile.paymentStatus === true) ) {
 
-      return (<Browse lock={this.lock} idToken={this.state.idToken} profile={this.state.profile}  />);
+      return (<Browse lock={this.props.lock} idToken={this.props.idToken} profile={this.state.profile}  />);
     } else {
 
-      return (<Payment lock={this.lock} idToken={this.state.idToken} profile={this.state.profile} />);
+      return (<Payment lock={this.props.lock} idToken={this.props.idToken} profile={this.state.profile} />);
     }
   } else {
 
