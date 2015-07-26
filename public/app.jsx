@@ -10,9 +10,9 @@ var App = React.createClass({
   setupAjax: function() {
     $.ajaxSetup({
       'beforeSend': function(xhr) {
-        if (localStorage.getItem('userToken')) {
+        if (localStorage.getItem('afroToken')) {
           xhr.setRequestHeader('Authorization',
-                'Bearer ' + localStorage.getItem('userToken'));
+                'Bearer ' + localStorage.getItem('afroToken'));
         }
       }
     });
@@ -22,12 +22,12 @@ var App = React.createClass({
     console.log(localStorage);
     console.log('*** end of local storage ***');
 
-    var idToken = localStorage.getItem('userToken');
+    var idToken = localStorage.getItem('afroToken');
     var authHash = this.lock.parseHash(window.location.hash);
     if (!idToken && authHash) {
       if (authHash.id_token) {
         idToken = authHash.id_token
-        localStorage.setItem('userToken', authHash.id_token);
+        localStorage.setItem('afroToken', authHash.id_token);
       }
       if (authHash.error) {
         console.log("Error signing in", authHash);

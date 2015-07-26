@@ -84,8 +84,8 @@ var PaymentForm = React.createClass({
 
 				$.ajax({
 					type: 'POST',
-					//url: 'http://localhost:3002/api/subscriptions',
-					url: 'https://afrostream-api-v1-staging.herokuapp.com/api/subscriptions',
+					url: 'http://localhost:3002/api/subscriptions',
+					//url: 'https://afrostream-api-v1-staging.herokuapp.com/api/subscriptions',
 					data: formData,
 					contentType: 'application/json',
 					success: function () {
@@ -123,13 +123,13 @@ var PaymentForm = React.createClass({
 
 		if (this.state.subscriptionStatus === 'subscribed'){
 
-			localStorage.removeItem('userToken');
+			localStorage.removeItem('afroToken');
 
 			return(
 				<div>
 					<h3>Subscription Confirmed</h3>
 					<p>Thank you for subscribing!</p>
-					<p>Please <a href="http://afrostream-user-mgmt-staging.herokuapp.com/">log in</a> to start enjoying.</p>
+					<p>Please <a href="http://localhost:3000">log in</a> to start enjoying.</p>
 				</div>
 			);
 		} else if (this.state.subscriptionStatus === 'not subscribed') {

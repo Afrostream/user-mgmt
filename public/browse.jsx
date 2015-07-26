@@ -15,7 +15,7 @@ var Browse = React.createClass({
 	logOut: function() {
 
 		console.log('*** this dude is logging out!!! ***');
-		localStorage.removeItem('userToken');
+		localStorage.removeItem('afroToken');
 
 		this.setState({
 			loggedIn: false
