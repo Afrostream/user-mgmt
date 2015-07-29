@@ -25,14 +25,12 @@ var PaymentForm = React.createClass({
 		$('.recurly-cc-cvc').payment('formatCardCVC');
 
 		$( "#subscription-create" ).submit(function( event ) {
-
 			event.preventDefault();
 		});
 
 		console.log('*** api being called ***');
 
 		var billingInfo = {
-			//'plan-code': $('#plan_code').val(),
 			'plan-code': this.props.planName,
 			// required attributes
 			'number': $('.recurly-cc-number').val(),
@@ -49,13 +47,9 @@ var PaymentForm = React.createClass({
 			'email': this.props.profile.email,
 			// optional attributes
 			'coupon_code': $('#coupon_code').val(),
-			//'unit-amount-in-cents': $('#unit_amount_in_cents').val(),
 			'unit-amount-in-cents': this.props.unitAmountInCents,
 			'country': $('#country').val(),
-			//'country': 'FR',
-			//'starts_at': $('#starts_at').val(),
 			'starts_at': this.props.startDate,
-			//'is_gift': $('#is_gift').val(),
 			'is_gift': '0',
 			'gift_first_name': '',
 			'gift_last_name': '',

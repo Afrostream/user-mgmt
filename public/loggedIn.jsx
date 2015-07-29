@@ -1,14 +1,4 @@
 var LoggedIn = React.createClass({
-  callApi: function() {
-    $.ajax({
-      url: 'http://localhost:3002/api/subscriptions',
-      method: 'GET'
-    }).then(function(data, textStatus, jqXHR) {
-      alert("The request to the secured enpoint was successfull");
-    }, function() {
-      alert("You need to download the server seed and start it to call this API");
-    });
-  },
 
   getInitialState: function() {
     return {

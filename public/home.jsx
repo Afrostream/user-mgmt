@@ -1,8 +1,26 @@
 var Home = React.createClass({
-  showLock: function() {
-    // We receive lock from the parent component in this case
-    // If you instantiate it in this component, just do this.lock.show()
-    this.props.lock.show();
+
+  showSigninLock: function() {
+
+    this.props.lock.show(
+      {
+        dict: 'fr',
+        connections: ['Username-Password-Authentication', 'facebook'],
+        socialBigButtons: true,
+        disableSignupAction: true
+      }
+    );
+  },
+
+  showSignupLock: function() {
+
+    this.props.lock.showSignup(
+      {
+        dict: 'fr',
+        connections: ['Username-Password-Authentication', 'facebook'],
+        socialBigButtons: true
+      }
+    );
   },
 
   render: function() {
@@ -11,7 +29,8 @@ var Home = React.createClass({
       <img src="https://i.cloudup.com/StzWWrY34s.png" />
       <h3>Auth0 Example</h3>
       <p>Zero friction identity infrastructure, built for developers</p>
-      <a onClick={this.showLock} className="btn btn-primary btn-lg btn-login btn-block">Sign In</a>
+      <a onClick={this.showSigninLock} className="btn btn-primary btn-lg btn-login btn-block">Sign In</a>
+      <a onClick={this.showSignupLock} className="btn btn-primary btn-lg btn-login btn-block">Sign Up</a>
     </div>);
   }
 });
